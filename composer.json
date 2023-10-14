@@ -9,10 +9,7 @@
     "autoload": {
         "psr-4": {
             "FEEC\\": "src/"
-        },
-        "files": [
-            "./src/helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
@@ -20,12 +17,19 @@
         }
     },
     "require": {
-        "php":">=8.0.0",
-        "loduis/xml-document": "dev-master"
+        "php":"^8",
+        "loduis/xml-document": "master",
+        "loduis/feec-helpers": "dev-main"
     },
     "require-dev": {
-        "loduis/xml-tests": "dev-master"
+        "loduis/xml-tests": "master"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/loduis/php-fe-ec-helpers.git"
+        }
+    ],
     "prefer-stable": true,
     "prefer-dist": true,
     "minimum-stability": "dev",

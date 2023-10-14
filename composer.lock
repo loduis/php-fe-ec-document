@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "360c24363cad24e4e1992c499e0b04ae",
+    "content-hash": "a0fcf32b4447f8da91c013fbdd638320",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -312,6 +312,40 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2022-09-21T21:30:03+00:00"
+        },
+        {
+            "name": "loduis/feec-helpers",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/loduis/php-fe-ec-helpers.git",
+                "reference": "03298797d27fc7f2c88ca89bd30956c12cc109d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/loduis/php-fe-ec-helpers/zipball/03298797d27fc7f2c88ca89bd30956c12cc109d7",
+                "reference": "03298797d27fc7f2c88ca89bd30956c12cc109d7",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/constants.php",
+                    "src/functions.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Loduis Madariaga",
+                    "email": "loduis@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/loduis/php-fe-ec-helpers/tree/main",
+                "issues": "https://github.com/loduis/php-fe-ec-helpers/issues"
+            },
+            "time": "2023-10-14T16:30:56+00:00"
         },
         {
             "name": "loduis/xml-contracts",
@@ -3628,13 +3662,12 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "loduis/xml-document": 20,
-        "loduis/xml-tests": 20
+        "loduis/feec-helpers": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0.0"
+        "php": "^8"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
