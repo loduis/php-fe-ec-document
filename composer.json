@@ -1,0 +1,35 @@
+{
+    "name": "loduis/feec-document",
+    "authors": [
+        {
+            "name": "Loduis Madariaga",
+            "email": "loduis@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "FEEC\\": "src/"
+        },
+        "files": [
+            "./src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FEEC\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php":">=8.0.0",
+        "loduis/xml-document": "dev-master"
+    },
+    "require-dev": {
+        "loduis/xml-tests": "dev-master"
+    },
+    "prefer-stable": true,
+    "prefer-dist": true,
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin"
+    }
+}
