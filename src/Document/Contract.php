@@ -7,9 +7,18 @@ declare(strict_types=1);
 namespace FEEC\Document;
 
 use XML\Support\Element;
+use XML\Support\Single;
 use XML\Document\Creator;
 use FEEC\Document\Contact;
+use DomainException;
+
+use function FEEC\get_key;
+
 use const FEEC\TYPE_EMISSION;
+use const FEEC\DOC_RUC;
+use const FEEC\DOC_ID_CARD;
+use const FEEC\DOC_ID_FOREIGN;
+use const FEEC\DOC_FINAL_CONSUMER;
 
 /**
  * @property taxes
@@ -24,6 +33,7 @@ abstract class Contract extends \XML\Document
         'net' => 'float',
         'total' => 'float',
         'key' => 'string',
+        'securityCode' => 'int',
         'currency' => 'string',
         'customer' => Contact::class,
         'supplier' => Contact::class,
@@ -37,7 +47,7 @@ abstract class Contract extends \XML\Document
     {
         return [
             'ambiente' => $this->environment,
-            'tipoEmision' => TYPE_EMISSION, // Normal es una constante por ahora
+            'tipoEmision' => $this->issue, // Normal es una constante por ahora
             'razonSocial' => $this->supplier->name,
             'nombreComercial' => $this->supplier->tradename,
             'ruc' => $this->supplier->identification->number,
@@ -47,9 +57,14 @@ abstract class Contract extends \XML\Document
             'ptoEmi' => $this->location->issue,
             'secuencial' => $this->number,
             'dirMatriz' => $this->supplier->address->main,
-            'regimenMicroempresas' => $this->supplier->regimeMicroenterprise,
+            'regimenMicroempresas' => $this->supplier->regimeMicroEnterprise,
             'agenteRetencion' => $this->withholdingAgent,
         ];
+    }
+
+    protected function getIssue(): int
+    {
+        return TYPE_EMISSION;
     }
 
     protected function getTaxes(iterable $taxes)
@@ -71,6 +86,9 @@ abstract class Contract extends \XML\Document
                     'precioUnitario' => $item->price,
                     'descuento' => $item->discount,
                     'precioTotalSinImpuesto' => $item->net,
+                    'detallesAdicionales' => [
+                        'detAdicional' => $this->mapNotes($item->comments)
+                    ],
                     'impuestos' => [
                         'impuesto' => $this->mapLineTaxes($item->taxes)
                     ],
@@ -79,9 +97,28 @@ abstract class Contract extends \XML\Document
         ];
     }
 
+    protected function mapNotes(?string $comments): ?array
+    {
+        if (!$comments) {
+            return null;
+        }
+
+        $entries = [];
+
+        foreach (explode("\n", $comments) as $i => $comment) {
+            $entries[] = new Single('', [
+                'nombre' => 'Detalle' . ($i + 1),
+                'valor' => $comment
+            ]);
+        }
+
+        return $entries;
+    }
+
     protected function mapLineTaxes(iterable $taxes): array
     {
         return $this->map($taxes, function ($tax) {
+
             return [
                 'codigo' => $tax->code,
                 'codigoPorcentaje' => $tax->rate_code,
@@ -128,6 +165,40 @@ abstract class Contract extends \XML\Document
         ];
 
         return $main . $issue;
+    }
+
+    protected function getKey(?string $value): string
+    {
+        $value = $value ?: get_key(
+            str_replace('/', '', $this->date), //date
+            $this->type, // type doc
+            $this->supplier->identification->number, // nit
+            $this->environment, // env
+            $this->location->main . $this->location->issue, // local and point
+            $this->number, // number
+            $this->securityCode, // code
+            $this->issue // type issue
+        );
+
+        if (strlen($value) !== 49) {
+            throw new DomainException('Invalid access key: ' . $value);
+        }
+
+        return $value;
+    }
+
+    protected function setCustomer($customer)
+    {
+        $id = $customer['identification'] ?? null;
+        if (isset($id['type']) && !in_array($id['type'], [
+            DOC_RUC,
+            DOC_ID_CARD,
+            DOC_ID_FOREIGN,
+            DOC_FINAL_CONSUMER
+        ])) {
+            throw new DomainException('Invalid document type: ' . $id['type']);
+        }
+        return $customer;
     }
 
     abstract protected function mapTaxes(iterable $taxes): array;

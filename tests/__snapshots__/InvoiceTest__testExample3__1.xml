@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<factura id="comprobante" version="2.1.0">
+  <infoTributaria>
+    <ambiente>2</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <razonSocial>DAVID FERNANDO MARTINEZ PAEZ</razonSocial>
+    <nombreComercial>P CLICK</nombreComercial>
+    <ruc>1901941231001</ruc>
+    <claveAcceso>0102202401190194123100120010030000000211234567818</claveAcceso>
+    <codDoc>01</codDoc>
+    <estab>001</estab>
+    <ptoEmi>003</ptoEmi>
+    <secuencial>000000021</secuencial>
+    <dirMatriz>Calle Base3 Sur y ROW</dirMatriz>
+  </infoTributaria>
+  <infoFactura>
+    <fechaEmision>01/02/2024</fechaEmision>
+    <dirEstablecimiento>Calle Base3 Sur y ROW</dirEstablecimiento>
+    <obligadoContabilidad>NO</obligadoContabilidad>
+    <tipoIdentificacionComprador>04</tipoIdentificacionComprador>
+    <razonSocialComprador>ANA BELEN MOREJON ARCE</razonSocialComprador>
+    <identificacionComprador>1713337245001</identificacionComprador>
+    <direccionComprador>SUCRE 06-61 Y LUCAS L MERA</direccionComprador>
+    <totalSinImpuestos>392.86</totalSinImpuestos>
+    <totalDescuento>0.00</totalDescuento>
+    <totalConImpuestos>
+      <totalImpuesto>
+        <codigo>2</codigo>
+        <codigoPorcentaje>2</codigoPorcentaje>
+        <baseImponible>392.86</baseImponible>
+        <tarifa>12</tarifa>
+        <valor>47.14</valor>
+      </totalImpuesto>
+    </totalConImpuestos>
+    <propina>0.00</propina>
+    <importeTotal>440.00</importeTotal>
+    <moneda>DOLAR</moneda>
+    <pagos>
+      <pago>
+        <formaPago>20</formaPago>
+        <total>440.00</total>
+      </pago>
+    </pagos>
+  </infoFactura>
+  <detalles>
+    <detalle>
+      <codigoPrincipal>005</codigoPrincipal>
+      <descripcion>PLAN DIFUSIÓN DE NEGOCIO - Generación de Clientes por PPC</descripcion>
+      <cantidad>1</cantidad>
+      <precioUnitario>392.8571</precioUnitario>
+      <descuento>0.00</descuento>
+      <precioTotalSinImpuesto>392.86</precioTotalSinImpuesto>
+      <detallesAdicionales>
+        <detAdicional nombre="Detalle1" valor="Administración de Anuncios de Pago en Facebook e Instagram."/>
+      </detallesAdicionales>
+      <impuestos>
+        <impuesto>
+          <codigo>2</codigo>
+          <codigoPorcentaje>2</codigoPorcentaje>
+          <tarifa>12</tarifa>
+          <baseImponible>392.86</baseImponible>
+          <valor>47.14</valor>
+        </impuesto>
+      </impuestos>
+    </detalle>
+  </detalles>
+  <infoAdicional>
+    <campoAdicional nombre="Dirección">SUCRE 06-61 Y LUCAS L MERA</campoAdicional>
+    <campoAdicional nombre="Teléfono">098 603 7038</campoAdicional>
+    <campoAdicional nombre="Email">A@hotmail.com, R@hotmail.com</campoAdicional>
+  </infoAdicional>
+</factura>

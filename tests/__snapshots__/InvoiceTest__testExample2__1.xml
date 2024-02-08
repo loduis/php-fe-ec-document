@@ -6,7 +6,7 @@
     <razonSocial>INMOBILIARIA CALDARIO SA</razonSocial>
     <nombreComercial>INMOBILIARIA CALDARIO SA</nombreComercial>
     <ruc>1790645231001</ruc>
-    <claveAcceso>2104202101179064523100110010010000035700000035701</claveAcceso>
+    <claveAcceso>2104202101179064523100110010010000035700000357011</claveAcceso>
     <codDoc>01</codDoc>
     <estab>001</estab>
     <ptoEmi>001</ptoEmi>
@@ -43,8 +43,6 @@
         <total>59528.00</total>
       </pago>
     </pagos>
-    <valorRetIva>0.00</valorRetIva>
-    <valorRetRenta>0.00</valorRetRenta>
   </infoFactura>
   <detalles>
     <detalle>
@@ -66,7 +64,8 @@
     </detalle>
   </detalles>
   <infoAdicional>
-    <campoAdicional nombre="Telefono">042322000</campoAdicional>
+    <campoAdicional nombre="Dirección">AV. 9 DE OCTUBRE 729 Y  BOYACA</campoAdicional>
+    <campoAdicional nombre="Teléfono">042322000</campoAdicional>
     <campoAdicional nombre="Email">rolando.roc@gmail.com</campoAdicional>
     <campoAdicional nombre="Observaciones">HONORARIOS POR ADMINISTRACION, DIRECCION Y RESPONSABILIDAD TECNICA CUOTA 11 DEL 01 AL 28 DE MARZO DE 2021 PROYECTO RIOCENTRO QUITO DIRECCION: AV. 6 DE DICIEMBRE N21-245 TOMAS DE BERLANGA, CALLE PINZON</campoAdicional>
   </infoAdicional>

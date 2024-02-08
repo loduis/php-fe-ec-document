@@ -52,9 +52,9 @@ class CreditNote extends Document\Contract
     {
         return [
             'campoAdicional' => [
-                new Single($this->customer->phone, ['nombre' => 'Telefono']),
-                new Single($this->customer->email, ['nombre' => 'Email']),
                 new Single($this->customer->address->main, ['nombre' => 'Direccion']),
+                new Single($this->customer->phone, ['nombre' => 'Teléfono']),
+                new Single($this->customer->email, ['nombre' => 'Email']),
                 new Single($this->comments, ['nombre' => 'Observaciones' ])
             ]
         ];

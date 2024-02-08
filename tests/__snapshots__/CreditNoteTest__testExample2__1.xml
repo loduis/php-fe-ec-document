@@ -57,8 +57,8 @@
     </detalle>
   </detalles>
   <infoAdicional>
-    <campoAdicional nombre="Telefono">042322000</campoAdicional>
-    <campoAdicional nombre="Email">rolando.roc@gmail.com</campoAdicional>
     <campoAdicional nombre="Direccion">salinas y santiago</campoAdicional>
+    <campoAdicional nombre="Teléfono">042322000</campoAdicional>
+    <campoAdicional nombre="Email">rolando.roc@gmail.com</campoAdicional>
   </infoAdicional>
 </notaCredito>

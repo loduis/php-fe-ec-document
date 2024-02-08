@@ -14,10 +14,19 @@ class Contact extends Element
         'email' => 'string',
         'phone' => 'string',
         'withholdingAgent' => 'int',
-        'regimeMicroenterprise' => 'bool',
+        'regimeMicroEnterprise' => 'bool',
         'specialTaxpayer' => 'int',
         'requiredAccounting' => 'bool',
         'address' => Address::class,
         'identification' => Element::class,
     ];
+
+    protected function setEmail($email)
+    {
+        if (is_array($email)) {
+            $email = implode(', ', $email);
+        }
+
+        return $email;
+    }
 }

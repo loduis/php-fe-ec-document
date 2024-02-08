@@ -43,8 +43,8 @@ class Invoice extends Document\Contract
                 'importeTotal' => $this->total, // preguntar
                 'moneda' => $this->currency, // hay que preguntar si es un currency code
                 'pagos' => $this->payments,
-                'valorRetIva' => $this->withholding->vat ?? '0.00',
-                'valorRetRenta' => $this->withholding->renta ?? '0.00',
+                'valorRetIva' => $this->withholding->vat,
+                'valorRetRenta' => $this->withholding->renta,
             ],
             'detalles' => $this->items,
             'retenciones' => $this->witholdings,
@@ -55,7 +55,8 @@ class Invoice extends Document\Contract
     protected function getExtraInfo(): array
     {
         $entries = [
-            'Telefono' => $this->customer->phone,
+            'Dirección' => $this->customer->address->main,
+            'Teléfono' => $this->customer->phone,
             'Email' => $this->customer->email,
             'Observaciones' => $this->comments,
         ];

@@ -44,8 +44,6 @@
         <unidadTiempo>dias</unidadTiempo>
       </pago>
     </pagos>
-    <valorRetIva>0.00</valorRetIva>
-    <valorRetRenta>0.00</valorRetRenta>
   </infoFactura>
   <detalles>
     <detalle>
@@ -67,7 +65,8 @@
     </detalle>
   </detalles>
   <infoAdicional>
-    <campoAdicional nombre="Telefono">31678969</campoAdicional>
+    <campoAdicional nombre="Dirección">1491 Cypress Drive. Suite #853. Pebble Beach, California 93953</campoAdicional>
+    <campoAdicional nombre="Teléfono">31678969</campoAdicional>
     <campoAdicional nombre="Email">loduis@myabakus.com</campoAdicional>
     <campoAdicional nombre="Observaciones">Esto es una factura de prueba.</campoAdicional>
   </infoAdicional>
