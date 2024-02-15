@@ -388,20 +388,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/loduis/php-fe-ec-helpers.git",
-                "reference": "bb124bc61f492ef254e5d910e8a56bdd0b2cf889"
+                "reference": "262e87b70ad97e2c8323daa143f223c3c6eb342f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loduis/php-fe-ec-helpers/zipball/bb124bc61f492ef254e5d910e8a56bdd0b2cf889",
-                "reference": "bb124bc61f492ef254e5d910e8a56bdd0b2cf889",
+                "url": "https://api.github.com/repos/loduis/php-fe-ec-helpers/zipball/262e87b70ad97e2c8323daa143f223c3c6eb342f",
+                "reference": "262e87b70ad97e2c8323daa143f223c3c6eb342f",
                 "shasum": ""
             },
             "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
-                    "src/constants.php",
-                    "src/functions.php"
+                    "src/helpers.php"
                 ]
             },
             "authors": [
@@ -414,7 +413,7 @@
                 "source": "https://github.com/loduis/php-fe-ec-helpers/tree/main",
                 "issues": "https://github.com/loduis/php-fe-ec-helpers/issues"
             },
-            "time": "2024-02-08T12:28:20+00:00"
+            "time": "2024-02-15T10:55:35+00:00"
         },
         {
             "name": "loduis/xml-contracts",

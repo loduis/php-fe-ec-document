@@ -7,8 +7,10 @@ use FEEC\Invoice;
 use function FEEC\get_key;
 
 use const FEEC\DOC_RUC;
-use const FEEC\ENV_PRO;
+use const FEEC\ENV_PROD;
 use const FEEC\ENV_TEST;
+use const FEEC\RIMPE_ENTREPRENEURS;
+use const FEEC\RIMPE_POPULAR_BUSINESSES;
 use const FEEC\TAX_VAT;
 use const FEEC\VAT_RATE_12;
 
@@ -175,7 +177,7 @@ class InvoiceTest extends TestCase
     {
 
         $doc = Invoice::fromArray([
-            'environment' => ENV_PRO,
+            'environment' => ENV_PROD,
             'currency' => 'DOLAR',
             'date' => '01/02/2024',
             'prefix' => '001-003', // es la serie
@@ -250,6 +252,168 @@ class InvoiceTest extends TestCase
         $this->assertSchema($doc);
         $this->assertMatchesXmlSnapshot($doc->pretty());
 
+    }
+
+    public function testExample4()
+    {
+
+        $doc = Invoice::fromArray([
+            'environment' => ENV_TEST,
+            'currency' => 'DOLAR',
+            'date' => '01/02/2024',
+            'prefix' => '001-003', // es la serie
+            'number' => '000000021',
+            'net' => '392.86',
+            'discount' => '0.00',
+            'total' => '440.00',
+            'security_code' => '12345678',
+            'supplier' => [
+                'name' => 'DAVID FERNANDO MARTINEZ PAEZ',
+                'tradename' => 'P CLICK',
+                'identification' => [
+                    'number' => '1901941231001'
+                ],
+                'address' => [
+                    'main' => 'Calle Base3 Sur y ROW',
+                ],
+                'required_accounting' =>false,
+                'rimpe_taxpayer' => RIMPE_ENTREPRENEURS
+            ],
+            'customer' => [
+                'name' => 'ANA BELEN MOREJON ARCE',
+                'identification' => [
+                    'type' => DOC_RUC,
+                    'number' => '1713337245001',
+                ],
+                'address' => [
+                    'main' => 'SUCRE 06-61 Y LUCAS L MERA'
+                ],
+                'email' => [
+                    'A@hotmail.com',
+                    'R@hotmail.com'
+                ],
+                'phone' => '098 603 7038',
+            ],
+            'items' => [
+                [
+                    'code' => '005',
+                    'description' => 'PLAN DIFUSIÓN DE NEGOCIO - Generación de Clientes por PPC',
+                    'qty' => 1,
+                    'price' => '392.8571',
+                    'net' => '392.86',
+                    'discount' => '0.00',
+                    'taxes' => [
+                        [
+                            'code' => TAX_VAT, // IVA
+                            'rate_code' => VAT_RATE_12,
+                            'base' => '392.86',
+                            'rate' => 12,
+                            'amount' => '47.14',
+                        ],
+                    ],
+                    'comments' => 'Administración de Anuncios de Pago en Facebook e Instagram.'
+                ],
+            ],
+            'taxes' => [
+                [
+                    'code' => TAX_VAT, // IVA
+                    'rate_code' => VAT_RATE_12,
+                    // 'discount' => '0.00',
+                    'base' => '392.86',
+                    'rate' => 12,
+                    'amount' => '47.14',
+                ],
+            ],
+            'payments' => [
+                [
+                    'method' => '20',
+                    'amount' => '440.00',
+                ],
+            ]
+        ]);
+        $this->assertSchema($doc);
+        $this->assertMatchesXmlSnapshot($doc->pretty());
+    }
+
+    public function _testExample5()
+    {
+
+        $doc = Invoice::fromArray([
+            'environment' => ENV_TEST,
+            'currency' => 'DOLAR',
+            'date' => '01/02/2024',
+            'prefix' => '001-003', // es la serie
+            'number' => '000000021',
+            'net' => '392.86',
+            'discount' => '0.00',
+            'total' => '440.00',
+            'security_code' => '12345678',
+            'supplier' => [
+                'name' => 'DAVID FERNANDO MARTINEZ PAEZ',
+                'tradename' => 'P CLICK',
+                'identification' => [
+                    'number' => '1901941231001'
+                ],
+                'address' => [
+                    'main' => 'Calle Base3 Sur y ROW',
+                ],
+                'required_accounting' =>false,
+                'rimpe_taxpayer' => RIMPE_POPULAR_BUSINESSES
+            ],
+            'customer' => [
+                'name' => 'ANA BELEN MOREJON ARCE',
+                'identification' => [
+                    'type' => DOC_RUC,
+                    'number' => '1713337245001',
+                ],
+                'address' => [
+                    'main' => 'SUCRE 06-61 Y LUCAS L MERA'
+                ],
+                'email' => [
+                    'A@hotmail.com',
+                    'R@hotmail.com'
+                ],
+                'phone' => '098 603 7038',
+            ],
+            'items' => [
+                [
+                    'code' => '005',
+                    'description' => 'PLAN DIFUSIÓN DE NEGOCIO - Generación de Clientes por PPC',
+                    'qty' => 1,
+                    'price' => '392.8571',
+                    'net' => '392.86',
+                    'discount' => '0.00',
+                    'taxes' => [
+                        [
+                            'code' => TAX_VAT, // IVA
+                            'rate_code' => VAT_RATE_12,
+                            'base' => '392.86',
+                            'rate' => 12,
+                            'amount' => '47.14',
+                        ],
+                    ],
+                    'comments' => 'Administración de Anuncios de Pago en Facebook e Instagram.'
+                ],
+            ],
+            'taxes' => [
+                [
+                    'code' => TAX_VAT, // IVA
+                    'rate_code' => VAT_RATE_12,
+                    // 'discount' => '0.00',
+                    'base' => '392.86',
+                    'rate' => 12,
+                    'amount' => '47.14',
+                ],
+            ],
+            'payments' => [
+                [
+                    'method' => '20',
+                    'amount' => '440.00',
+                ],
+            ]
+        ]);
+        $this->assertSchema($doc);
+        $this->assertMatchesXmlSnapshot($doc->pretty());
     }
 
     public function testKey()

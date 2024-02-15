@@ -19,6 +19,8 @@ use const FEEC\DOC_RUC;
 use const FEEC\DOC_ID_CARD;
 use const FEEC\DOC_ID_FOREIGN;
 use const FEEC\DOC_FINAL_CONSUMER;
+use const FEEC\RIMPE_ENTREPRENEURS;
+use const FEEC\RIMPE_POPULAR_BUSINESSES;
 
 /**
  * @property taxes
@@ -57,9 +59,23 @@ abstract class Contract extends \XML\Document
             'ptoEmi' => $this->location->issue,
             'secuencial' => $this->number,
             'dirMatriz' => $this->supplier->address->main,
-            'regimenMicroempresas' => $this->supplier->regimeMicroEnterprise,
-            'agenteRetencion' => $this->withholdingAgent,
+            'agenteRetencion' => $this->supplier->withholdingAgent,
+            'contribuyenteRimpe' => $this->rimpeInfo
         ];
+    }
+
+    protected function getRimpeInfo(): ?string
+    {
+        $code = (int) $this->supplier->rimpeTaxpayer;
+
+        if ($code === RIMPE_ENTREPRENEURS) {
+            return 'CONTRIBUYENTE RÉGIMEN RIMPE';
+        }
+        if ($code === RIMPE_POPULAR_BUSINESSES) {
+            return 'CONTRIBUYENTE NEGOCIO POPULAR - RÉGIMEN RIMPE';
+        }
+
+        return null;
     }
 
     protected function getIssue(): int
