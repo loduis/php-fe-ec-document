@@ -335,7 +335,7 @@ class InvoiceTest extends TestCase
         $this->assertMatchesXmlSnapshot($doc->pretty());
     }
 
-    public function _testExample5()
+    public function testExample5()
     {
 
         $doc = Invoice::fromArray([
