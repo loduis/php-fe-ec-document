@@ -52,8 +52,9 @@ class Barcode
 
         ob_start();
         imagepng($image);
+        $content = ob_get_clean();
         imagedestroy($image);
-        return ob_get_clean();
+        return $content;
     }
 
     public function save(string $filename)
