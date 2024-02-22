@@ -2,6 +2,7 @@
 
 namespace FEEC\Tests;
 
+use FEEC\Document\Barcode;
 use FEEC\Invoice;
 
 use function FEEC\get_key;
@@ -414,6 +415,13 @@ class InvoiceTest extends TestCase
         ]);
         $this->assertSchema($doc);
         $this->assertMatchesXmlSnapshot($doc->pretty());
+    }
+
+    public function testBarCode()
+    {
+        $barcode = new Barcode('0102202401190194123100120010030000000211234567818');
+
+        $this->assertEquals('iVBORw0KGgoAAAANSUhEUgAAAoIAAAAeAQMAAACCBe1HAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAFxJREFUSIntzLEJAEEIBdEFU8FWhE0FWxcsYFsRTIW75Uq4+GfDBG81kxyex1RrMvOQGmtPpwuR21TcKexm1bdM7NaXyTW6Y7hji6Qbl+9YECFChAgRIkSIEH+KL9zq06Fo5UGoAAAAAElFTkSuQmCC', $barcode->toBase64());
     }
 
     public function testKey()
