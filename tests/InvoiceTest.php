@@ -13,7 +13,7 @@ use const FEEC\ENV_TEST;
 use const FEEC\RIMPE_ENTREPRENEURS;
 use const FEEC\RIMPE_POPULAR_BUSINESSES;
 use const FEEC\TAX_VAT;
-use const FEEC\VAT_RATE_12;
+use const FEEC\TAX_VAT_RATE_12;
 
 class InvoiceTest extends TestCase
 {
@@ -224,7 +224,7 @@ class InvoiceTest extends TestCase
                     'taxes' => [
                         [
                             'code' => TAX_VAT, // IVA
-                            'rate_code' => VAT_RATE_12,
+                            'rate_code' => TAX_VAT_RATE_12,
                             'base' => '392.86',
                             'rate' => 12,
                             'amount' => '47.14',
@@ -236,7 +236,7 @@ class InvoiceTest extends TestCase
             'taxes' => [
                 [
                     'code' => TAX_VAT, // IVA
-                    'rate_code' => VAT_RATE_12,
+                    'rate_code' => TAX_VAT_RATE_12,
                     // 'discount' => '0.00',
                     'base' => '392.86',
                     'rate' => 12,
@@ -306,7 +306,7 @@ class InvoiceTest extends TestCase
                     'taxes' => [
                         [
                             'code' => TAX_VAT, // IVA
-                            'rate_code' => VAT_RATE_12,
+                            'rate_code' => TAX_VAT_RATE_12,
                             'base' => '392.86',
                             'rate' => 12,
                             'amount' => '47.14',
@@ -318,7 +318,7 @@ class InvoiceTest extends TestCase
             'taxes' => [
                 [
                     'code' => TAX_VAT, // IVA
-                    'rate_code' => VAT_RATE_12,
+                    'rate_code' => TAX_VAT_RATE_12,
                     // 'discount' => '0.00',
                     'base' => '392.86',
                     'rate' => 12,
@@ -387,7 +387,7 @@ class InvoiceTest extends TestCase
                     'taxes' => [
                         [
                             'code' => TAX_VAT, // IVA
-                            'rate_code' => VAT_RATE_12,
+                            'rate_code' => TAX_VAT_RATE_12,
                             'base' => '392.86',
                             'rate' => 12,
                             'amount' => '47.14',
@@ -399,7 +399,7 @@ class InvoiceTest extends TestCase
             'taxes' => [
                 [
                     'code' => TAX_VAT, // IVA
-                    'rate_code' => VAT_RATE_12,
+                    'rate_code' => TAX_VAT_RATE_12,
                     // 'discount' => '0.00',
                     'base' => '392.86',
                     'rate' => 12,
