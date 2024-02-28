@@ -119,16 +119,12 @@ abstract class Contract extends \XML\Document
             return null;
         }
 
-        $entries = [];
-
-        foreach (explode("\n", $comments) as $i => $comment) {
-            $entries[] = new Single('', [
-                'nombre' => 'Detalle' . ($i + 1),
-                'valor' => $comment
-            ]);
-        }
-
-        return $entries;
+        return [
+            new Single('', [
+                'nombre' => 'Observaciones',
+                'valor' => $comments
+            ])
+        ];
     }
 
     protected function mapLineTaxes(iterable $taxes): array

@@ -44,10 +44,10 @@ class Invoice extends Document\Contract
                 'moneda' => $this->currency, // hay que preguntar si es un currency code
                 'pagos' => $this->payments,
                 'valorRetIva' => $this->withholding->vat,
-                'valorRetRenta' => $this->withholding->renta,
+                'valorRetRenta' => $this->withholding->income,
             ],
             'detalles' => $this->items,
-            'retenciones' => $this->witholdings,
+            'retenciones' => $this->withholdings,
             'infoAdicional' => $this->extraInfo,
         ];
     }
@@ -117,7 +117,7 @@ class Invoice extends Document\Contract
         ];
     }
 
-    protected function  getWitholdings(?iterable $taxes)
+    protected function  getWithholdings(?iterable $taxes)
     {
         return [
             'retencion' => $this->map($taxes ?? [], function ($tax) {

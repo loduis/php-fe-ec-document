@@ -52,7 +52,7 @@
       <descuento>0.00</descuento>
       <precioTotalSinImpuesto>392.86</precioTotalSinImpuesto>
       <detallesAdicionales>
-        <detAdicional nombre="Detalle1" valor="Administración de Anuncios de Pago en Facebook e Instagram."/>
+        <detAdicional nombre="Observaciones" valor="Administración de Anuncios de Pago en Facebook e Instagram."/>
       </detallesAdicionales>
       <impuestos>
         <impuesto>
