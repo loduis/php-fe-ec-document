@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php":"^8",
+        "php": "^7.4|^8.0",
         "loduis/xml-document": "master",
         "loduis/feec-helpers": "dev-main",
         "picqer/php-barcode-generator": "^2.4"
@@ -29,6 +29,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/loduis/php-fe-ec-helpers.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/loduis/php-support.git"
         }
     ],
     "prefer-stable": true,
