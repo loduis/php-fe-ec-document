@@ -55,7 +55,7 @@ class Invoice extends Document\Contract
     protected function getExtraInfo(): array
     {
         $entries = [
-            'Dirección' => $this->customer->address->main,
+            // 'Dirección' => $this->customer->address->main,
             'Teléfono' => $this->customer->phone,
             'Email' => $this->customer->email,
             'Observaciones' => $this->comments,
