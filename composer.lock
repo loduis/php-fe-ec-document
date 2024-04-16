@@ -49,12 +49,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/loduis/php-support.git",
-                "reference": "12ba3e6f54ff3b2a32045f9528039d742094670b"
+                "reference": "4cac25ff489fa532a36fbed4ae7683020f85f533"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/loduis/php-support/zipball/12ba3e6f54ff3b2a32045f9528039d742094670b",
-                "reference": "12ba3e6f54ff3b2a32045f9528039d742094670b",
+                "url": "https://api.github.com/repos/loduis/php-support/zipball/4cac25ff489fa532a36fbed4ae7683020f85f533",
+                "reference": "4cac25ff489fa532a36fbed4ae7683020f85f533",
                 "shasum": ""
             },
             "default-branch": true,
@@ -85,7 +85,7 @@
                 "source": "https://github.com/loduis/php-support/tree/main",
                 "issues": "https://github.com/loduis/php-support/issues"
             },
-            "time": "2024-04-16T13:07:01+00:00"
+            "time": "2024-04-16T20:22:16+00:00"
         },
         {
             "name": "loduis/xml-contracts",
