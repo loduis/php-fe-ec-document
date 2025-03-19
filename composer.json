@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "loduis/xml-document": "master",
         "loduis/feec-helpers": "dev-main",
         "picqer/php-barcode-generator": "^2.4"
